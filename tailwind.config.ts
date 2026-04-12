@@ -26,6 +26,19 @@ const config: Config = {
           900: "#1c1917",
           950: "#0c0a09",
         },
+        // Single accent color — used with conviction, not decoration
+        terracotta: {
+          50: "#fdf4ef",
+          100: "#f8e4d0",
+          200: "#f1c8a2",
+          300: "#e8a56e",
+          400: "#dc7d43",
+          500: "#cb6d51", // primary accent
+          600: "#a8502d",
+          700: "#8a3e22",
+          800: "#6e301a",
+          900: "#572614",
+        },
       },
     },
   },

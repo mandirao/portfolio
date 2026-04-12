@@ -19,7 +19,7 @@ export default function Nav() {
           href="/"
           className="font-mono text-sm font-medium tracking-tight text-stone-900 hover:text-stone-600 transition-colors"
         >
-          YourName
+          Mandi O&apos;Brien
         </Link>
         <ul className="flex items-center gap-8">
           {links.map(({ href, label }) => (

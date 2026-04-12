@@ -1,71 +1,81 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Portfolio",
+  title: "Case Studies — Mandi O'Brien",
 };
 
 export default function CaseStudies() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-20">
-      <div className="mb-16">
+      {/* Page header */}
+      <div className="mb-20">
         <p className="font-mono text-xs uppercase tracking-widest text-stone-400 mb-3">
           Work
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-4">
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-stone-900 mb-5">
           Case Studies
         </h1>
         <p className="text-stone-500 max-w-xl leading-relaxed">
-          A selection of projects where I've driven meaningful outcomes through
-          design and product thinking.
+          Four stories. Each one shows a different thing—AI product judgment,
+          growth execution, UX instinct, technical leadership. The through-line
+          is the same in all of them.
         </p>
       </div>
 
-      <div className="space-y-6">
-        {caseStudies.map((study) => (
+      {/* Case study list */}
+      <div>
+        {caseStudies.map((study, index) => (
           <article
             key={study.id}
             id={study.id}
-            className="group relative rounded-2xl border border-stone-100 hover:border-stone-200 bg-stone-50 hover:bg-white transition-all p-8 cursor-default"
+            className="py-14 border-t border-stone-100 first:border-t-0"
           >
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="font-mono text-xs text-stone-400">
-                    {study.year}
-                  </span>
-                  <span className="w-1 h-1 rounded-full bg-stone-300" />
-                  <span className="text-xs text-stone-400">{study.tag}</span>
-                </div>
-                <h2 className="text-xl font-semibold text-stone-900">
-                  {study.title}
-                </h2>
+            {/* Meta row */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+              <div className="flex items-center gap-4 font-mono text-xs text-stone-400">
+                <span className="text-stone-200">
+                  0{index + 1}
+                </span>
+                <span>·</span>
+                <span>{study.year}</span>
+                <span>·</span>
+                <span>{study.tag}</span>
               </div>
-              <span className="shrink-0 px-3 py-1 rounded-full bg-stone-200 text-stone-500 text-xs font-medium">
+              <span className="font-mono text-xs text-stone-400">
                 {study.status}
               </span>
             </div>
 
-            <p className="text-stone-500 leading-relaxed mb-8">
-              {study.summary}
+            {/* Claim headline — the thing it proves */}
+            <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 leading-snug mb-2 max-w-2xl">
+              {study.claim}
+            </h2>
+
+            {/* Story title as descriptor */}
+            <p className="text-sm text-stone-400 mb-7">
+              {study.title} — {study.company}
             </p>
 
-            {/* Placeholder image */}
-            <div className="w-full h-56 rounded-xl bg-stone-100 flex items-center justify-center text-stone-300 font-mono text-sm mb-8">
-              [ cover image ]
-            </div>
+            {/* Context */}
+            <p className="text-stone-500 leading-relaxed max-w-2xl mb-8">
+              {study.context}
+            </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-              {study.outcomes.map((outcome) => (
-                <div key={outcome.label}>
-                  <p className="text-2xl font-semibold text-stone-900">
-                    {outcome.value}
-                  </p>
-                  <p className="text-xs text-stone-400 mt-0.5">
-                    {outcome.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+            {/* Outcomes — only rendered when there are real metrics */}
+            {study.outcomes.length > 0 && (
+              <div className="flex flex-wrap gap-10">
+                {study.outcomes.map((outcome) => (
+                  <div key={outcome.label}>
+                    <p className="text-3xl font-bold text-terracotta-500 leading-none">
+                      {outcome.value}
+                    </p>
+                    <p className="text-xs text-stone-400 mt-2">
+                      {outcome.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
           </article>
         ))}
       </div>
@@ -75,45 +85,64 @@ export default function CaseStudies() {
 
 const caseStudies = [
   {
-    id: "project-one",
+    id: "sunny-ai",
+    year: "2025",
+    tag: "AI Product · Consumer UX",
+    status: "In design · Case study in progress",
+    claim: "Teaching a lawn funnel to see.",
+    title: "Sunny AI",
+    company: "Sunday",
+    context:
+      "The acquisition funnel asks leads to self-report lawn conditions—a step with high drop-off and low data quality. I designed a photo-upload AI analysis feature: lead uploads a yard photo, a vision model returns a structured assessment (weeds, bare spots, pet damage), lead confirms or adjusts before data writes to the funnel. The spec includes image compression, graceful fallback to manual flow, confidence thresholds, correction rate tracking, and a shared analysis service pattern for every future AI use case. This is the first AI feature in the product.",
+    outcomes: [],
+  },
+  {
+    id: "sunday-funnel",
     year: "2024",
-    tag: "Product Design · UX Research",
-    status: "Case study coming soon",
-    title: "Redesigning the onboarding flow",
-    summary:
-      "The existing onboarding was built fast and never revisited — a 14-step form with a 60% drop-off rate. I led end-to-end research and redesign, reducing onboarding to 5 steps and shipping in 6 weeks. The outcome was a measurable lift in activation and a new internal template for how we approach signup flows.",
+    tag: "Growth · A/B Testing · UX",
+    status: "Case study in progress",
+    claim: "60 tests. 115% CVR. $1.2M over goal.",
+    title: "Lawn subscription acquisition funnel",
+    company: "Sunday",
+    context:
+      "Inherited a funnel that hadn't been touched with real product rigor. In year one: ran 60+ A/B tests in VWO, drove a cumulative 115% CVR improvement, and delivered $1.2M over revenue goal on a ~$19M DTC funnel. New subscribers up 11.1% YoY. Session-to-plan-selection rate up 33%. Plan-to-purchase rate up 87%. The work that earned the \"best steerco in the history of our steercos\" quote from the company President lives in this case study.",
     outcomes: [
-      { value: "−58%", label: "Drop-off rate" },
-      { value: "+40%", label: "Day-1 activation" },
-      { value: "6 wks", label: "Ship timeline" },
+      { value: "+115%", label: "Cumulative CVR improvement" },
+      { value: "$1.2M", label: "Over revenue goal" },
+      { value: "+11.1%", label: "New subscribers YoY" },
     ],
   },
   {
-    id: "project-two",
-    year: "2023",
-    tag: "Design Systems · Engineering",
-    status: "Case study coming soon",
-    title: "Building a design system from scratch",
-    summary:
-      "Four designers, three codebases, zero shared components. I audited the inconsistencies, defined a token system, and partnered with engineering to ship a component library used across every surface. It reduced design-to-dev handoff time by half and became the foundation for a rebrand.",
+    id: "need-algorithm",
+    year: "2021",
+    tag: "UX · Product Sense · Growth",
+    status: "Case study in progress",
+    claim: "A 3-day fix did what years of backend work couldn't.",
+    title: "Writer UX — Need Algorithm",
+    company: "Verblio",
+    context:
+      "Writers weren't changing behavior after a major algorithm update because nothing in the UI told them it had changed. Watched FullStory for 10 minutes. Saw the problem immediately: numeric \"need\" scores (1–5) meant nothing to writers. Changed them to plain language (Lite → On Fire). Added a competition indicator when customers already had submissions. Rewrote helper text. Released a Pendo guide. Three days. Content delivered under 96 hours jumped from 60% to 90%—a trend that held for two years.",
     outcomes: [
-      { value: "120+", label: "Components shipped" },
-      { value: "−50%", label: "Handoff time" },
-      { value: "3", label: "Products unified" },
+      { value: "60→90%", label: "Under-96h delivery rate" },
+      { value: "3 days", label: "Implementation" },
+      { value: "2+ yrs", label: "Improvement held" },
     ],
   },
   {
-    id: "project-three",
-    year: "2023",
-    tag: "Product Strategy · iOS",
-    status: "Case study coming soon",
-    title: "0→1 mobile app launch",
-    summary:
-      "Joined a founding team pre-launch to own product and design for an iOS app in the health space. Ran discovery interviews, defined the MVP scope, and shipped v1 in four months. The app reached 10k downloads in the first month without paid acquisition.",
+    id: "multipass",
+    year: "2021–22",
+    tag: "Technical Leadership · Cross-functional",
+    status: "Case study in progress",
+    claim:
+      "Led the most technically complex project in company history while keeping the lights on.",
+    title: "Multipass — Billing & Subscription Replatform",
+    company: "Verblio",
+    context:
+      "Obsolete billing and subscription architecture was quietly blocking customer experience, writer pay accuracy, business analytics, and pricing strategy—all at once. Led a cross-functional fellowship of six. Partnered with the CTO, senior engineer, and product marketer. Wrote vertically sliced user stories so parallel development could proceed. Designed phased migration with a full communications strategy. A mid-level engineer became the team hero and was promoted to senior. The junior PM I was coaching earned her promotion.",
     outcomes: [
-      { value: "10k", label: "Downloads in month 1" },
-      { value: "4.7★", label: "App Store rating" },
-      { value: "4 mo", label: "0 to launch" },
+      { value: "6", label: "Cross-functional contributors" },
+      { value: "2", label: "Team members promoted" },
+      { value: "4", label: "Blocked domains unblocked" },
     ],
   },
 ];

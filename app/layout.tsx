@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Personal portfolio and case studies",
+  title: "Mandi O'Brien — Product Leader",
+  description:
+    "Senior PM and AI product leader. Design background, engineering roots, outcomes on record.",
 };
 
 export default function RootLayout({
@@ -32,8 +33,8 @@ export default function RootLayout({
         <main>{children}</main>
         <footer className="border-t border-stone-100 py-10 mt-24">
           <div className="max-w-5xl mx-auto px-6 flex items-center justify-between text-sm text-stone-400">
-            <span>© {new Date().getFullYear()}</span>
-            <span className="font-mono">Built with Next.js</span>
+            <span>Mandi O&apos;Brien · {new Date().getFullYear()}</span>
+            <span className="font-mono text-xs">Next.js · Vercel</span>
           </div>
         </footer>
       </body>
