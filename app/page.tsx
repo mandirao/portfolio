@@ -5,23 +5,14 @@ export default function Home() {
     <div className="max-w-5xl mx-auto px-6">
       {/* Hero */}
       <section className="pt-32 pb-28">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-stone-900 leading-[1.05] mb-8 max-w-3xl">
-          I make the invisible legible.
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-stone-900 leading-[1.05] mb-10 max-w-3xl">
+          Builder since 1997. Coder turned designer turned PM and occasional
+          team-builder. 
         </h1>
-        <div className="max-w-xl space-y-4 text-lg text-stone-500 leading-relaxed mb-10">
-          <p>
-            Design, engineering, and product strategy aren&apos;t three
-            jobs—they&apos;re three lenses on the same problem. I&apos;ve
-            worked all three. It shows.
-          </p>
-          <p>
-            Currently Senior PM at Sunday. Last year: 60+ A/B tests, 115% CVR
-            improvement, $1.2M over goal on a funnel I inherited broken. Before
-            that, 5x revenue at a bootstrapped two-sided marketplace. Right
-            now: designing the AI feature that tells you what&apos;s wrong with
-            your lawn from a photo.
-          </p>
-        </div>
+        <p className="text-xl sm:text-2xl font-light text-stone-500 leading-snug mb-10 max-w-2xl">
+          Currently senior IC at Sunday, where I own the $30M acquisition
+          funnel and am designing its first AI-powered lawn diagnosis feature.
+        </p>
         <div className="flex flex-wrap items-center gap-4">
           <Link
             href="/case-studies"
