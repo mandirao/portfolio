@@ -15,7 +15,7 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap items-center gap-4">
           <Link
-            href="/case-studies"
+            href="/work"
             className="inline-flex items-center px-5 py-2.5 rounded-full bg-terracotta-500 text-white text-sm font-medium hover:bg-terracotta-600 transition-colors"
           >
             View the work
@@ -40,7 +40,7 @@ export default function Home() {
           {selectedWork.map((item) => (
             <Link
               key={item.slug}
-              href={`/case-studies#${item.slug}`}
+              href={`/work/${item.slug}`}
               className="group flex items-start justify-between py-7 border-b border-stone-100 hover:border-stone-300 transition-colors"
             >
               <div className="flex items-baseline gap-6 min-w-0">

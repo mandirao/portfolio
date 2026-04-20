@@ -146,3 +146,9 @@ and the thinking behind the outcomes.
 
 ## Content source of truth
 My full career context, story bank, and verified metrics live in my Career Identity Layer document. When writing copy for this site, ask me to paste relevant sections rather than inferring from job titles alone.
+
+## Session logs
+Decision logs live in /logs/ with date-stamped filenames.
+When making significant architectural decisions, create or 
+update the relevant log file. These are source material for 
+future synthesis — treat them as honest, not polished.

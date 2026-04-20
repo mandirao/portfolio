@@ -1,0 +1,31 @@
+# Session Log — April 19, 2026
+
+## What we decided
+- Moved from hardcoded .tsx content to markdown-based 
+  content system
+- Next.js reads /content/*.md files at build time
+- No external CMS — markdown is the CMS
+
+## Why
+- Site has 3 case studies now, easy to restructure
+- Markdown files = same pattern as knowledge vault feature
+- Claude Code is excellent at generating/editing markdown
+- Adding content later = create one file, not edit a page
+
+## Navigation settled on
+Home / Work / Building / Writing / Now / About / Contact
+
+## Content types created
+- Case studies → /content/case-studies/*.md
+- Building → /content/building/*.md  
+- Writing → /content/writing/*.md (placeholder)
+- Now → /content/now.md (single file, rewrite manually)
+
+## What I was thinking
+[your notes here — anything you want to remember]
+
+## What worked
+[fill in after the build]
+
+## What didn't / open questions
+[fill in after the build]
