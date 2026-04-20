@@ -9,15 +9,47 @@ summary: "Inherited a funnel that hadn't been touched with real product rigor. I
 metrics: ["+115% CVR", "$1.2M over goal", "+11.1% new subscribers"]
 ---
 
-## The situation
+# The situation
 
-The Sunday lawn subscription funnel hadn't been touched with real product rigor. Sessions were leaking everywhere. No experimentation culture. No clear owner. I inherited it in April 2023 with a mandate to fix it — and no specific direction beyond that.
+The Sunday acquisition funnel had years of instinct behind it 
+and no way to prove any of it. When CVR dropped, the team 
+could list what shipped. Nobody could explain what caused it. 
+I inherited it in April 2023 — no experimentation culture, 
+no clear measurement standard, no owner. My mandate was 
+vague: fix it.
 
-## What I did
+Six months later, our CPO and my direct manager were laid off. 
+I had no air cover and a new VP of Engineering who didn't yet 
+trust the process I was proposing. That's when I made the bet: 
+we'd go faster if we slowed down.
 
-Built a structured A/B testing program in VWO from the ground up. Wrote the testing strategy, established statistical significance standards for executive reporting, and ran 60+ tests across the funnel over nine months. Not spray-and-pray — every test was preceded by a hypothesis, a FullStory session or two, and a clearly defined metric.
+## The system I built
 
-The highest-impact work happened on the plan selection page: the moment where a lead selects their lawn plan before purchase. Session-to-plan-selection rate was up 33% YoY by the end of the season. Plan-to-purchase rate up 87%.
+Before I ran a single test, I built the infrastructure to 
+learn from them.
+
+A PM control room — Discovery, Delivery, Impact, and AB 
+Testing views — gave the team real-time visibility into 
+where every bet was in its lifecycle. A weekly meeting I 
+called Thunderdome brought together senior stakeholders and 
+the data team to pressure-test every test before it launched: 
+was the hypothesis sound? Were the success metrics measuring 
+the right thing? Were guardrails in place?
+
+Every test was documented to a standard: background, 
+hypothesis, control vs. variant experience, primary success 
+metric, secondary metrics and guardrails, learnings, next 
+steps. Jira linked discovery tickets to engineering delivery 
+tickets to AB test cards — so nothing lived only in my head.
+
+I didn't rely on VWO's binary winner/loser calls. I built 
+custom Heap dashboards to measure clicks, scrolls, plan 
+purchases, and behavior funnels. I used Omni to check AOV 
+impacts. When Session-Based CVR turned out to be measuring 
+marketing efficiency rather than funnel health, I invented 
+a new metric — Qualified CVR — to cut through the noise.
+
+Then I trained a Jr. PM to run it.
 
 ## The steerco
 
